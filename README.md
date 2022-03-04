@@ -1,4 +1,4 @@
-# oracle-linux-sync
+# arch-linux-update-helper
 
 ## Table of contents
 * [Description](#description)
