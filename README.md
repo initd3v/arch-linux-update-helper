@@ -27,10 +27,10 @@ The Project is written as a GNU bash shell script.
 | GNU bash              | >= 5.1.4(1)                           | necessary     | bash                                                                                              |
 | GNU Awk               | >= 5.1.0                              | necessary     | awk                                                                                               |
 | GNU Coreutils         | >= 8.32c                              | necessary     | clear & date & dirname & echo & false & id & mkdir & realpath & rm & test & true & yes            |
-| git                   | >= 2.30.2                             | optional      | git                                                                                               |
+| git                   | >= 2.30.2                             | necessary     | git                                                                                               |
 | grep                  | >= 3.6                                | necessary     | grep                                                                                              |
 | pacman                | >= 7.0.0                              | necessary     | pacman & makepkg                                                                                  |
-| sudo                  | >= 1.9.16p2                           | optional      | sudo                                                                                              |
+| sudo                  | >= 1.9.16p2                           | necessary     | sudo                                                                                              |
 | whereis               | >= 2.36.1                             | necessary     | whereis                                                                                           |
 
 ## Setup
