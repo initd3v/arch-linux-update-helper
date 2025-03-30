@@ -7,13 +7,31 @@
 * [Usage](#usage)
 
 ## Description
-This bash script updates all external AUR sources by checking their version number and performas an additional world update. 
-It can be run in a non-root user context. But be aware to give sudo rights for AUR package updates and system updates.
+The script 'arch-linux-update-helper.sh' is used for updating community driven (AUR) and official package upgrades. Additionally it can clear the pacman cache for non-existent packages.
+
+To run the script you need to cmake it executable for a user with at least sudo rights. Further information can be obtained from the 'Usage' part.
+
+Supported functions:
+
+* identify and update AUR driven packages which are manually installed
+* uninstall not existent AUR packages by user interaction
+* update world update packages from official repositories
+* clean up pacman cache for non-existent packages
 
 The Project is written as a GNU bash shell script.
 
 ## Dependencies
-* mandatory : GNU bash          >= 5
+| Dependency            | Version                               | Necessity     | Used Command Binary                                                                               |
+|:----------------------|:--------------------------------------|:-------------:|:-------------------------------------------------------------------------------------------------:|
+| curl                  | >= 8.12.1                             | necessary     | curl                                                                                              |
+| GNU bash              | >= 5.1.4(1)                           | necessary     | bash                                                                                              |
+| GNU Awk               | >= 5.1.0                              | necessary     | awk                                                                                               |
+| GNU Coreutils         | >= 8.32c                              | necessary     | clear & date & dirname & echo & false & id & mkdir & realpath & rm & test & true & yes            |
+| git                   | >= 2.30.2                             | optional      | git                                                                                               |
+| grep                  | >= 3.6                                | necessary     | grep                                                                                              |
+| pacman                | >= 7.0.0                              | necessary     | pacman & makepkg                                                                                  |
+| sudo                  | >= 1.9.16p2                           | optional      | sudo                                                                                              |
+| whereis               | >= 2.36.1                             | necessary     | whereis                                                                                           |
 
 ## Setup
 To run this project, you need to clone it to your local computer and run it as a shell script.
@@ -35,19 +53,6 @@ $ chmod u+x /tmp/arch-linux-update-helper/src/arch-linux-update-helper.sh
 $ /tmp/oracle-linux-sync/src/arch-linux-update-helper.sh
 ```
 
-### Supported Options
+### Syntax
 
-#### Overview
-
-* arch-linux-update-helper.sh [ -d=[download path AUR packages] -v=[verbosity]]
-* arch-linux-update-helper.sh -h
-
-#### Option Description
-
-The folowing configuration options are valid. Every parameter is followed by a "=":
-
-| Option syntax        | Description                                                         | Necessity | Supported value(s)  | Default |
-|:---------------------|:--------------------------------------------------------------------|:---------:|:-------------------:|:-------:|
-| -h \| --help         | display help page                                                   | optional  | -                   | -       |
-| -v \| --verbosity    | adjust level of verbosity (0 = no logging \| 1 = systemctl and log file logging \| 2 = systemctl, log file logging and terminal output | optional  | INT from 0 to 2 | 2      |
-| -d \| --directory    | set path to download folder where AUR packages should be saved      | optional  | STRING              | -       |
+* arch-linux-update-helper.sh
